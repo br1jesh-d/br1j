@@ -1,0 +1,12 @@
+1. find pathname \( -name "*.php" -o -name "*.jsp" -o -name "*.htm" -o -name "*.html" \) -exec egrep -l -i "multipart/form-data" {} \; > upload-ServerIP.txt 
+2. find pathname \( -name "*.php" -o -name "*.jsp" -o -name "*.htm" -o -name "*.html" \) -exec egrep -l -i "username|password" {} \; > logins-ServerIP.txt 
+3. find pathname \( -iname "*admin*" -o -iname "*cms*" -o -name "control*" -o -iname "*login*" \) > admin-ServerIP.txt 
+4. find pathname \( -name "*.php" -o -name "*.htm" -o -name "*.html" \) -exec egrep -l -i "proc_|exec\(|ini_|system|shell_exec|gzinflate\(base64_decode\(" {} \; > shellfiles-ServerIP.txt 
+5. find pathname | egrep -i "\.txt|\.php\.|\.sql" > extra-ServerIP.txt 
+6. ls -l pathname | grep "^d" > list-ServerIP.txt 
+7. find pathname > all_files.txt 
+8. ls pathname -alR > file_permissions.txt 
+NOTE: 
+1) Replace pathname with the location where the web applications are hosted. 
+2) Replace ServerIP with the webservers' Public IP/IPs. 
+3) No data/information should be left at the server related to the above activity.
